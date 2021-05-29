@@ -6,13 +6,21 @@ router.post('/', (req, res) => {
     title: req.body.title,
     post_url: req.body.post_url
   })
-  .then(results => res.json(results))
-  .catch(err => {
-    if(err) {
-      console.log(err);
-      res.status(500).json(err)
+    .then(results => res.json(results))
+    .catch(err => {
+      if (err) {
+        console.log(err);
+        res.status(500).json(err)
+      }
+    })
+});
+
+router.post('/update', (req, res) => {
+  Post.update({
+    where: {
+      id: req.params.id
     }
   })
-});
+})
 
 module.exports = router;
