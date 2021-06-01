@@ -12,7 +12,6 @@ router.get('/dashboard', (req, res) => {
     const posts = results.map(post => post.get({ plain: true }))
     res.render('dashboard', { 
       posts
-      // loggedIn: true
     })
   })
   .catch(err => {

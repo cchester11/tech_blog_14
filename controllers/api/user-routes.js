@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Vote, Comment } = require('../../models');
 
+
 router.get('/', (req, res) => {
   User.findAll({})
   .then(results => res.json(results))
@@ -40,7 +41,16 @@ router.post('/login', (req, res) => {
     //   return
     // }
 
-    res.json({ user: results, message: 'You are now logged in!' })
+    req.session.save(() => {
+      req.session.user_id = results.id;
+      req.session.username = results.username;
+      // req.session.loggedIn = true;
+
+      res.json({ 
+        user: results, message: 'You are now logged in!',
+        // loggedIn: req.session.loggedIn
+      })
+    })
   })
 });
 

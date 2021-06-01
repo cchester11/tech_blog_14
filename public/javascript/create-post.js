@@ -7,8 +7,8 @@ async function submitPostFunc (event) {
   const post_url = document.querySelector('#post-url').placeholder;
 
   if(title && post_url) {
-  const response = await fetch('/api/posts', {
-    method: 'post',
+  const response = await fetch('/api/posts/', {
+    method: "POST",
     body: JSON.stringify({
       title,
       post_url
