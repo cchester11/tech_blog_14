@@ -44,11 +44,11 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = results.id;
       req.session.username = results.username;
-      // req.session.loggedIn = true;
+      req.session.loggedIn = true;
 
       res.json({ 
         user: results, message: 'You are now logged in!',
-        // loggedIn: req.session.loggedIn
+        loggedIn: req.session.loggedIn
       })
     })
   })

@@ -6,7 +6,8 @@
       <div class="card-body bg-dark text-light">
         <h5 class="card-title">{{post.id}}</h5>
         <p class="card-text font-weight-light">{{post.title}}</p>
-        <button class="btn btn-primary" type="submit" id={{post.id}}>Update</button>
+        <p class="card-text font-weight light">{{post.content}}</p> 
+        <a href=("/updatePost/:" + {{post.id}})><button class="btn btn-primary" type="submit" id={{post.id}}>Update</button> </a>
       </div>
     </div>
   </div>
@@ -14,4 +15,3 @@
 </div>
 
 <script src="/javascript/dashboard.js"></script>
-<script src="/javascript/update.js"></script>

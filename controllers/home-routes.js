@@ -11,6 +11,7 @@ router.get('/dashboard', (req, res) => {
   .then(results => {
     const posts = results.map(post => post.get({ plain: true }))
     res.render('dashboard', { 
+      loggedIn: req.session.loggedIn,
       posts
     })
   })
@@ -22,8 +23,17 @@ router.get('/dashboard', (req, res) => {
   })
 });
 
+router.get('/updatePost/:id', (req, res) => {
+  res.render('update', {
+    id: req.params.id,
+    loggedIn: req.sessoin.loggedIn
+  })
+})
+
 router.get('/createPost', (req, res) => {
-  res.render('create-post');
+  res.render('create-post', {
+    loggedIn: req.session.loggedIn
+  });
 });
 
 module.exports = router;

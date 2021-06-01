@@ -3,15 +3,15 @@ const submitPostBtn = document.querySelector("#submitPostBtn");
 async function submitPostFunc (event) {
   event.preventDefault();
 
-  const title = document.querySelector('#post-content').placeholder;
-  const post_url = document.querySelector('#post-url').placeholder;
+  const content = document.querySelector('#post-content').value;
+  const title = document.querySelector('#post-title').value;
 
-  if(title && post_url) {
+  if(title && content) {
   const response = await fetch('/api/posts/', {
     method: "POST",
     body: JSON.stringify({
       title,
-      post_url
+      content
     }),
     headers: ({ 'Content-Type': 'application/json' })
   });
