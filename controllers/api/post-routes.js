@@ -16,17 +16,17 @@ router.post('/', (req, res) => {
     })
 });
 
-// router.put('/:id', (req, res) => {
-//   Post.update(req.body, {
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-//   .then(results => res.json(results))
-//   .catch(err => {
-//     res.status(400).json({ message: "no user data", err })
-//   })
-// })
+router.put('/:id', (req, res) => {
+  Post.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(results => res.json(results))
+  .catch(err => {
+    res.status(400).json({ message: "no user data", err })
+  })
+})
 
 // router.post('/update', (req, res) => {
 //   Post.update({
