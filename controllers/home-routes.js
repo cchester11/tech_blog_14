@@ -23,12 +23,14 @@ router.get('/dashboard', (req, res) => {
   })
 });
 
-router.get('/updatePost/:id', (req, res) => {
-  res.render('update', {
-    id: req.params.id,
-    loggedIn: req.sessoin.loggedIn
-  })
-})
+// router.get('/updatePost/:id', (req, res) => {
+//   res.render('update', {
+//     where: {
+//     id: req.params.id,
+//     },
+//     loggedIn: req.sessoin.loggedIn
+//   })
+// })
 
 router.get('/createPost', (req, res) => {
   res.render('create-post', {
