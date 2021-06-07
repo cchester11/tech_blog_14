@@ -26,14 +26,6 @@ router.put('/:id', (req, res) => {
   .catch(err => {
     res.status(400).json({ message: "no user data", err })
   })
-})
-
-// router.post('/update', (req, res) => {
-//   Post.update({
-//     where: {
-//       id: req.params.id
-//     }
-//   })
-// });
+});
 
 module.exports = router;

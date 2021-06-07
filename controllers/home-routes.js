@@ -24,12 +24,16 @@ router.get('/dashboard', (req, res) => {
 });
 
 router.get('/updatePost/:id', (req, res) => {
-  res.render('update', {
+  Post.findOne({
     where: {
-    id: req.params.id,
-    },
-    loggedIn: req.session.loggedIn
+      id:req.params.id
+    }
   })
+  .then(
+    res.render('update', {
+      loggedIn: req.session.loggedIn
+    })
+  )
 })
 
 router.get('/createPost', (req, res) => {

@@ -1,7 +1,22 @@
+html {
+  position: relative;
+  height: 100%
+}
+
+header {
+  width: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0 0 150px;
+}
+
 footer {
-  position: --webkit-sticky;
-  position: sticky;
-  margin-top: auto;
+  padding: 60px;
+  position: relative;
+  width: 100%;
   margin-bottom: 0;
-  padding: 50px;
+  z-index: 10;
+  margin-top: 300px;
 }

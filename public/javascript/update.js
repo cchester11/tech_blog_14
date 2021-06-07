@@ -1,13 +1,15 @@
 const updateBtn = document.querySelector(".btn-primary");
 
 async function sendToUpdatePage() {
-  var id = updateBtn.getAttribute('id');
+  const title = document.querySelector("#post-title").value;
+  const content = document.querySelector("#post-content").value;
 
-  if(id) {
-  const response = await fetch('/api/posts/' + id, {
+  if(updateBtn) {
+  const response = await fetch(`/api/posts/:id`, {
     method: "POST",
     body: JSON.stringify({
-      id
+      title,
+      content
     }),
     headers: {"Content-Type": "application/json"}
   });
@@ -15,7 +17,7 @@ async function sendToUpdatePage() {
   if(response.ok) {
     console.log('success');
     document.location.replace('/dashboard');
-    }
+    } 
   }
 };
 
