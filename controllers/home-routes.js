@@ -28,7 +28,7 @@ router.get('/updatePost/:id', (req, res) => {
     where: {
     id: req.params.id,
     },
-    loggedIn: req.sessoin.loggedIn
+    loggedIn: req.session.loggedIn
   })
 })
 

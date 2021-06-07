@@ -13,7 +13,8 @@ async function sendToUpdatePage() {
   });
   
   if(response.ok) {
-    console.log('success')
+    console.log('success');
+    document.location.replace('/dashboard');
     }
   }
 };
