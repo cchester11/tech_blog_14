@@ -26,14 +26,34 @@ router.get('/dashboard', (req, res) => {
 router.get('/updatePost/:id', (req, res) => {
   Post.findOne({
     where: {
-      id:req.params.id
-    }
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'title',
+      'content',
+      'user_id'
+    ],
+    include: [
+      {
+        model: User,
+        attributes: [
+          'username'
+        ]
+      }
+    ]
   })
-  .then(
+  .then(result => {
+    if(!result) {
+      res.status(400).json({ message: 'Error' });
+      return;
+    }
+    const post = result.get({ plain: true })
     res.render('update', {
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      post
     })
-  )
+  })
 })
 
 router.get('/createPost', (req, res) => {
