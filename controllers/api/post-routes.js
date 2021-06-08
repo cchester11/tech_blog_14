@@ -17,6 +17,7 @@ router.post('/', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
+  console.log(req.body, req.params)
   Post.update({
     title: req.body.title,
     content: req.body.content
@@ -30,6 +31,16 @@ router.put('/:id', (req, res) => {
   .catch(err => {
     res.status(400).json({ message: "no user data", err })
   })
+});
+
+router.delete('/deletePost/:id', (req, res) => {
+  Post.destroy({
+    where: {
+      id: req.params.id
+    }
+  })
+  .then(() => res.status(200).end())
+  .catch(err => res.json(err))
 });
 
 module.exports = router;

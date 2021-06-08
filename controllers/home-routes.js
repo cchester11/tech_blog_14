@@ -62,4 +62,10 @@ router.get('/createPost', (req, res) => {
   });
 });
 
+router.get('/logout', (req, res) => {
+  req.session.destroy(() => {
+    res.render('login-page')
+  })
+})
+
 module.exports = router;

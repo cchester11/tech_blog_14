@@ -7,7 +7,8 @@
         <h5 class="card-title">{{post.id}}</h5>
         <p class="card-text font-weight-light">{{post.title}}</p>
         <p class="card-text font-weight light">{{post.content}}</p> 
-        <a href="/updatePost/:{{post.id}}"> <button class="btn btn-primary" type="submit" id="updatePg-btn">Update</button> </a>
+        <a href="/updatePost/{{post.id}}"> <button class="btn btn-primary" type="submit" id="updatePg-btn">Update</button> </a>
+        <button class="btn btn-primary" type="submit" data-count="{{post.id}}" id="deletePost-btn">Delete</button>
       </div>
     </div>
   </div>
@@ -15,3 +16,4 @@
 </div>
 
 <script src="/javascript/dashboard.js"></script>
+<script src="/javascript/delete.js"></script>
