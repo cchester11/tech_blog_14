@@ -1,4 +1,4 @@
-# Project Title
+# Tech Blog
 
 Tech Blog is my first full stack webiste. I've familiarized myself with MVC structure, CRUD operations, using OOP to create models, and handlebars.
 
