@@ -6,6 +6,10 @@ Tech Blog is my first full stack webiste. I've familiarized myself with MVC stru
 
 Tech Blog is a basic example of a full stack application. Using the techniques and concepts mentioned above, I've used this build to enhance my skills as a developer. 
 
+## Preview
+
+<a href="https://fantasy-team-builder.herokuapp.com/" rel="demo">![demo](images/snippet.jpg)</a><br>
+
 ### Dependencies
 
 * bcrypt
